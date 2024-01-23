@@ -1,6 +1,4 @@
 //Program purpose: models an insurance policy for one person
-import java.util.Scanner;
-
 public class Policy{
    //Attributes
    private int policyNumber;
@@ -83,7 +81,7 @@ public class Policy{
    public void setHolderHeight(double height){
       holderHeight = height;
    }
-   public double getholderHeight(){
+   public double getHolderHeight(){
       return holderHeight;
    }
    //Holder weight
@@ -114,7 +112,4 @@ public class Policy{
       }
       return cost;
    }
-   
-
-   
 }   
