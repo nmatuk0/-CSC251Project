@@ -92,12 +92,18 @@ public class Policy{
       return holderWeight;
    }
 
-   //Method calculates and returns the BMI of the policyholder
+   /**
+      Method calculates BMI of the policyholder (no parameters)   
+      @return The BMI of the policyholder
+   */
    public double calculateBMI(){
       return (holderWeight * 703)/(holderHeight*holderHeight);
    }
    
-   //Method calculates and returns the price of the insurance policy
+   /**
+      Method calculates price of the insurance policy (no parameters)
+      @return The price of the insurance policy
+   */
    public double insuranceCost(){
       double cost = 600;
       if (holderAge > 50){
