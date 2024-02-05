@@ -6,9 +6,12 @@ import java.io.FileNotFoundException;
 
 public class Project_Nina_MatsukuraBernardino{
    public static void main(String[] args) throws FileNotFoundException{
-      //Read info about a set of Insurance Policies from a text file (PolicyInformation.txt) 
       ArrayList<Policy> policies = new ArrayList<>(); //array holds policy info
+      //Counters for smokers
+      int nonSmokers = 0;
+      int smokers = 0;
       
+      //Read info about a set of Insurance Policies from a text file (PolicyInformation.txt) 
       try (Scanner scnr = new Scanner (new File("PolicyInformation.txt"))){
          while (scnr.hasNextLine()){
             int policyNumber = scnr.nextInt();
@@ -26,7 +29,13 @@ public class Project_Nina_MatsukuraBernardino{
             //Creates a new policy object using info gathered above
             Policy policy = new Policy(policyNumber, providerName, holderFirstName, holderLastName, holderAge, smokerStatus, holderHeight, holderWeight);
             policies.add(policy);
-
+            
+            //Calculates smokers
+            if (smokerStatus.equals("smoker")){
+               smokers++;
+            }else if (smokerStatus.equals("non-smoker")){
+               nonSmokers++;
+            }
          }         
       }
  
@@ -44,6 +53,8 @@ public class Project_Nina_MatsukuraBernardino{
          System.out.println("Policyholder’s BMI: " + policy.calculateBMI());
          System.out.println("Policy Price: $" + policy.insuranceCost());
          }
-         
+      //
+      System.out.println("The number of policies with a smoker is: " + smokers);
+      System.out.println("The number of policies with a non-smoker is: " + nonSmokers);        
    }
 }   
