@@ -1,6 +1,6 @@
 //Programmed by Nina Matsukura Bernardino
 //Class will represent a person that is associated with an insurance policy
-//Step 1: Move the appropriate fields and methods of the Policy class into the PolicyHolder class
+//Step 1 of Project 3: Move the appropriate fields and methods of the Policy class into the PolicyHolder class
 public class PolicyHolder{
    //Attributes
    private String firstName;
@@ -73,13 +73,45 @@ public class PolicyHolder{
    public double getWeight(){
       return weight;
    }
-
+   //Should this be in Policy class or PolicyHolder class?
    /**
-      Method calculates BMI of the policyholder (no parameters)   
-      @return The BMI of the policyholder
+     Method calculates BMI of the policyholder (no parameters)   
+     @return The BMI of the policyholder
    */
    public double calculateBMI(){
-      return (holderWeight * 703)/(holderHeight*holderHeight);
+      return (weight * 703)/(height*height);
    }
- 
+   
+   /**
+      Method calculates price of the insurance policy (no parameters)
+      @return The price of the insurance policy  
+   */
+   public double insuranceCost(){
+      double cost = 600;
+      if (age > 50){
+         cost += 75;
+      }
+      if (smokerStatus.equals("Smoker")){
+         cost += 100;
+      }      
+      double BMI = calculateBMI();
+      if (BMI > 35){
+         cost += (BMI-35) * 20;
+      }
+      return cost;
+   }
+   
+   //Step 2 of Project 3: Add toString method
+   public String toString(){
+      System.out.println("Policyholder's First Name: " + firstName);
+      System.out.println("Policyholder's Last Name: " + lastName);
+      System.out.println("Policyholder's Age" + age);
+      System.out.println("Policyholder's Smoking Status (Y/N): " + smokerStatus);
+      System.out.println("Policyholder's Height: " + height);
+      System.out.println("Policyholder's Weight: " + weight);
+      System.out.println("Policyholder's BMI: " + calculateBMI());
+      System.out.println("Policy Price:" + insuranceCost());
+      return "";//required return statement
+   }
+   
 }   
