@@ -35,15 +35,17 @@ public class Policy{
    /**
       Method calculates BMI of the policyholder (no parameters)   
       @return The BMI of the policyholder
-   */
+   
    public double calculateBMI(){
       return (holderWeight * 703)/(holderHeight*holderHeight);
    }
+   */
    
    /**
       Method calculates price of the insurance policy (no parameters)
       @return The price of the insurance policy
-   */
+   
+     
    public double insuranceCost(){
       double cost = 600;
       if (holderAge > 50){
@@ -58,4 +60,13 @@ public class Policy{
       }
       return cost;
    }
+   */
+   
+   //Step 2 of Project 3: Add a toString method
+   public String toString(){
+      System.out.println("Policy Number: " + policyNumber);
+      System.out.println("Provider Name: " + providerName);
+      return ""; //required return statement
+   }
+   
 }   
