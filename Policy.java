@@ -1,37 +1,19 @@
 //Program purpose: models an insurance policy for one person
 public class Policy{
-   //Attributes
+   //Attributes specific to policy info only (no more holder info)
    private int policyNumber;
    private String providerName;
-   private String holderFirstName;
-   private String holderLastName;
-   private int holderAge;
-   private String smokerStatus;
-   private double holderHeight; //inches
-   private double holderWeight; //pounds
-   
+      
    //Sets default values for attributes (no-arg constructor)
    public Policy(){
       policyNumber = 0;
       providerName = "";
-      holderFirstName = "";
-      holderLastName = "";
-      holderAge = 0; 
-      smokerStatus = "";
-      holderHeight = 0.0;
-      holderWeight = 0.0;
    }
    
    //Contructor to initialize all fields with defaults
-   public Policy(int policyNum, String provName, String firstName, String lastName, int age, String smoker, double height, double weight){
+   public Policy(int policyNum, String provName){
       policyNumber = policyNum;
-      providerName = provName;
-      holderFirstName = firstName;
-      holderLastName = lastName;
-      holderAge = age;
-      smokerStatus = smoker;
-      holderHeight = height;
-      holderWeight = weight;     
+      providerName = provName;     
    }
    
    //Setters and Getters
@@ -49,49 +31,7 @@ public class Policy{
    public String getProviderName(){
       return providerName;
    }
-   //Holder first name 
-   public void setHolderFirstName(String firstName){
-      holderFirstName = firstName;
-   }
-   public String getHolderFirstName(){
-      return holderFirstName;
-   }
-   //Holder last name 
-   public void setHolderLastName(String lastName){
-      holderLastName = lastName;
-   }
-   public String getHolderLastName(){
-      return holderLastName;
-   }
-   //Holder age
-   public void setHolderAge(int age){
-      holderAge = age;
-   }
-   public int getHolderAge(){
-      return holderAge;
-   }
-   //Smoker status
-   public void setSmokerStatus(String smoker){
-      smokerStatus = smoker;
-   }
-   public String getSmokerStatus(){
-      return smokerStatus;
-   }
-   //Holder height
-   public void setHolderHeight(double height){
-      holderHeight = height;
-   }
-   public double getHolderHeight(){
-      return holderHeight;
-   }
-   //Holder weight
-   public void setHolderWeight(double weight){
-      holderWeight = weight;
-   }
-   public double getHolderWeight(){
-      return holderWeight;
-   }
-
+   
    /**
       Method calculates BMI of the policyholder (no parameters)   
       @return The BMI of the policyholder
