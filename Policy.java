@@ -3,17 +3,21 @@ public class Policy{
    //Attributes specific to policy info only (no more holder info)
    private int policyNumber;
    private String providerName;
+   //Step 3 of Project 3: Add static field to keep track of # of Policy objects created
+   private static int numOfPolicies = 0; 
       
    //Sets default values for attributes (no-arg constructor)
    public Policy(){
       policyNumber = 0;
       providerName = "";
+      numOfPolicies ++;
    }
    
    //Contructor to initialize all fields with defaults
    public Policy(int policyNum, String provName){
       policyNumber = policyNum;
-      providerName = provName;     
+      providerName = provName;   
+      numOfPolicies++;  
    }
    
    //Setters and Getters
@@ -37,6 +41,11 @@ public class Policy{
       System.out.println("Policy Number: " + policyNumber);
       System.out.println("Provider Name: " + providerName);
       return ""; //required return statement
+   }
+   
+   //Method to get number of policies created
+   public static int getNumOfPolicies(){
+      return numOfPolicies;
    }
    
 }   
